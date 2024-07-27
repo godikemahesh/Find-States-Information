@@ -1,12 +1,13 @@
 
 from openai import OpenAI
-
+#here i created client from mindsDB
+#sign in to mindsDB there you can find API_KEY, paste it here
 client = OpenAI(
-    api_key= "211fa21c08be45e86847eff9d61cb4e6bc7374995f3b7ac894d34f2395a415dd",
+    api_key= "Paste_your_apiKey", 
     base_url='https://llm.mdb.ai/'
 )
 def get_data(state):
-    formatted=f"""You are an assistant tasked with providing details of the given state of a country.
+    prompt=f"""You are an assistant tasked with providing details of the given state of a country.
     tell me about {state} state.
     when explaining about the state, give information of these subheadings:
     [Capital,Language,History,Economy,"Cuisine",Tourism,Festivals,Geography]
@@ -20,7 +21,7 @@ Answer:
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-            {'role': 'user', 'content': formatted}
+            {'role': 'user', 'content': prompt}
         ],
         stream=False
     )
