@@ -1,7 +1,9 @@
 # Find-States-Information
 we can directly run in jupyter notebook or voila interface
 download the file and open commad prompt.
-pip install voila
+'''cmd
+$pip install voila
+'''
 now run this commad to see interface.
 voila map.ipynb
 
